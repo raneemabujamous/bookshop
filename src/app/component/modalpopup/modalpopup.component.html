@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Categories</h1>
+<form [formGroup]="Reactiveform" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Categories</mat-label>
+            <input placeholder="new Category" matInput formControlName="title">
+        </mat-form-field>
+ 
+         
+ 
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button type="submit" mat-raised-button color="primary" cdkFocusInitial>Save</button>
+    </div>
+</form>

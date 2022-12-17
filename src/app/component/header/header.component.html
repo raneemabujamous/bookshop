@@ -1,0 +1,49 @@
+<header>
+    <div class="navbar   shadow-sm ">
+
+        <div class="navbar-brand align-item-center d-flex ml-1"  style="margin-left:40px">
+
+            <i style="font-size: 40px;" class="fa-regular fa-book ml-4">&nbsp;            </i>
+                <strong style="font-size: 30px ; margin-left:3px">BookShop</strong>
+        </div>
+  <div>
+
+    <ng-container  >
+<button mat-button routerLink="">
+    <mat-icon>home</mat-icon>
+    Home
+</button>
+
+</ng-container>
+
+<ng-container *ngIf="authService.currentUser$ | async  ">
+<button mat-button routerLink="book">
+    <mat-icon>book</mat-icon>
+    Book
+</button>
+
+</ng-container>
+<ng-container *ngIf="authService.currentUser$ | async  ">
+<button mat-button routerLink="category">
+    <mat-icon>category</mat-icon>
+    	Categories 
+</button>
+
+</ng-container>
+
+              <ng-container #logoutButton *ngIf="authService.currentUser$ | async as user ;" else loginButton >
+<button mat-button (click)="logout()"  ><mat-icon>logout</mat-icon> Logout</button>
+
+</ng-container>
+<ng-container #loginButton  *ngIf="!(authService.currentUser$ | async)">
+<button mat-button routerLink="login">
+    <mat-icon>login</mat-icon>
+    Login
+</button>
+
+</ng-container>
+
+    </div>
+
+</div>
+</header>
